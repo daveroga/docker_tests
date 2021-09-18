@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  apiserver:
+    container_name: apiserver
+    build: apiserver
+    ports:
+      - "3500:3000"
+    volumes:
+      - ./data:/data
+    networks:
+      - mynet
+    command: ["--watch", "db.json"]
+networks:
+  mynet:
+    driver: bridge
+
+    

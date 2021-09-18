@@ -1,0 +1,8 @@
+version: '3.5'
+services:
+  myserver:
+    restart: on-failure
+    image: 'ubuntu'
+    entrypoint: /bin/bash
+    stdin_open: true
+    tty: true

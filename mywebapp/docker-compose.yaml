@@ -1,0 +1,11 @@
+version: '3.5'
+services:
+  mywebapp:
+    build: .
+    ports:
+      - "8000:8080"
+    environment:
+      - NODE_ENV=PROD
+    volumes:
+      - ./dev:/usr/src/app/dev
+      - ./prod:/usr/src/app/prod

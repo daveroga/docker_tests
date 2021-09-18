@@ -1,0 +1,17 @@
+version: '3.5'
+services:
+  postgres:
+    build: postgres
+    restart: unless-stopped
+    env_file:
+      - ./postgres/database.env
+    volumes:
+      - ./postgres/postgres_vol:/var/lib/postgresql/data
+  apiserver:
+    build: apiserver
+    env_file:
+      - ./apiserver/apiserver.env
+    ports:
+      - 8000:12345
+volumes:
+  postgres_vol:      
